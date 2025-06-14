@@ -11,7 +11,7 @@ const Chat = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3001/api/chat', { message });
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/chat`, { message });
       setResponse(res.data);
       console.log("res data", res.data)
 
