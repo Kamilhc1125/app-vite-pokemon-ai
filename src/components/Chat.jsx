@@ -8,10 +8,18 @@ const Chat = () => {
   const [message, setMessage] = useState('');
   const [response, setResponse] = useState(null);
 
+  console.log(location.hostname);
+
+  const serverEndpoint = 'http://localhost:3001';
+
+  if (location.hostname !== 'localhost') {
+    serverEndpoint = 'https://app-node-pokemon-ai.onrender.com/';
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/chat`, { message });
+      const res = await axios.post(`${serverEndpoint}/api/chat`, { message });
       setResponse(res.data);
       console.log("res data", res.data)
 
