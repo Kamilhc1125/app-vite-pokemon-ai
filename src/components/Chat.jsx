@@ -17,7 +17,7 @@ const Chat = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${serverEndpoint}/api/chat`, { message });
+      const res = await axios.post(`${serverEndpoint}api/chat`, { message });
       setResponse(res.data);
       console.log("res data", res.data)
 
