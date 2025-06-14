@@ -8,9 +8,7 @@ const Chat = () => {
   const [message, setMessage] = useState('');
   const [response, setResponse] = useState(null);
 
-  console.log(location.hostname);
-
-  const serverEndpoint = 'http://localhost:3001';
+  let serverEndpoint = 'http://localhost:3001';
 
   if (location.hostname !== 'localhost') {
     serverEndpoint = 'https://app-node-pokemon-ai.onrender.com/';
